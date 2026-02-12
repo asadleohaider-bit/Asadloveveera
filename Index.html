@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentine’s Day Veera ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #4a1c1c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      max-width: 700px;
+      width: 90%;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-weight: normal;
+      color: #b23a48;
+      margin-top: 0;
+    }
+    .heart {
+      font-size: 3rem;
+      animation: beat 1.5s infinite;
+      margin: 20px 0;
+    }
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    .signature {
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    button {
+      margin-top: 30px;
+      padding: 14px 26px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 999px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(255,77,109,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 26px rgba(255,77,109,0.5);
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Happy Valentine’s Day</h1>
+    <h2>To my favorite person 💕</h2>
+
+    <div class="heart">❤️</div>
+
+    <p>
+      I made this little corner of the internet just for you.
+      Every smile you give me, every conversation, every moment —
+      they all mean more to me than I know how to say.
+    </p>
+
+    <p>
+      Thank you for being you. Thank you for choosing me.
+      Today is about love, but honestly… I feel lucky every day.
+    </p>
+
+    <div style="margin-top:30px;">
+      <button onclick="yesClicked()">Yes 💖</button>
+      <button id="noBtn" onclick="noClicked()" style="margin-left:10px; background:#ffd6dc; color:#b23a48; box-shadow:none; position:relative;">No 🙈</button>
+    </div>
+
+    <p id="surprise" style="display:none; margin-top: 25px; font-weight: bold;">
+      You just made my heart the happiest ❤️
+    </p>
+    <p id="tease" style="display:none; margin-top: 25px; font-weight: bold;">
+      Haha nice try… there’s only one right answer 😘
+    </p>
+
+    <div class="signature">
+      Forever yours,<br />
+      <strong>Asad Ali Haider</strong>
+    </div>
+  </div>
+
+  <script>
+    function yesClicked() {
+      document.getElementById('surprise').style.display = 'block';
+      document.getElementById('tease').style.display = 'none';
+    }
+    function noClicked() {
+      const btn = document.getElementById('noBtn');
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 120 - 60;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+      document.getElementById('tease').style.display = 'block';
+      document.getElementById('surprise').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
